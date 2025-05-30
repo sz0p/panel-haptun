@@ -35,6 +35,11 @@
                         <p class="text-muted small">Leave empty to not assign an external identifier for this server. The external ID should be unique to this server and not be in use by any other servers.</p>
                     </div>
                     <div class="form-group">
+                        <label for="external_ip" class="control-label">External IP</label>
+                        <input type="text" name="external_ip" value="{{ old('external_ip', $server->external_ip) }}" class="form-control" />
+                        <p class="text-muted small">Optional: Public IP shown to users instead of the server's internal IP.</p>
+                    </div>
+                    <div class="form-group">
                         <label for="pUserId" class="control-label">Server Owner <span class="field-required"></span></label>
                         <select name="owner_id" class="form-control" id="pUserId">
                             <option value="{{ $server->owner_id }}" selected>{{ $server->user->email }}</option>
