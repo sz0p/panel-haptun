@@ -18,6 +18,7 @@ class UpdateServerDetailsRequest extends ServerWriteRequest
             'name' => $rules['name'],
             'user' => $rules['owner_id'],
             'description' => array_merge(['nullable'], $rules['description']),
+            'external_ip' => ['nullable', 'ip'], //dodane Roman
         ];
     }
 
@@ -32,6 +33,7 @@ class UpdateServerDetailsRequest extends ServerWriteRequest
             'name' => $this->input('name'),
             'owner_id' => $this->input('user'),
             'description' => $this->input('description'),
+            'external_ip' => $this->input('external_ip'), // dodane Roman
         ];
     }
 
