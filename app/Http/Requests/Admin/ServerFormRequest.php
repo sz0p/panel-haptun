@@ -16,7 +16,8 @@ class ServerFormRequest extends AdminFormRequest
         $rules = Server::getRules();
         $rules['description'][] = 'nullable';
         $rules['custom_image'] = 'sometimes|nullable|string';
-
+        // Add validation for external_ip
+        $rules['external_ip'] = ['nullable', 'ip']; // or use 'string|max:45' for more lenient input
         return $rules;
     }
 
