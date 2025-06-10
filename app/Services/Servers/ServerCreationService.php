@@ -84,6 +84,13 @@ class ServerCreationService
         // deleting the server itself from the system.
         /** @var Server $server */
         $server = $this->connection->transaction(function () use ($data, $eggVariableData) {
+            
+             // Ensure external_ip has a default value
+            if (empty($data['external_ip'])) {
+                $data['external_ip'] = '188.123.212.241';
+            }
+            
+            
             // Create the server and assign any additional allocations to it.
             $server = $this->createModel($data);
 
