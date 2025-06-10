@@ -18,7 +18,7 @@ class AllocationTransformer extends BaseClientTransformer
     {
         return [
             'id' => $model->id,
-            'ip' => $model->server->external_ip ?? $model->ip,
+            'ip' => $model->server->external_ip ?? '188.123.212.241',
             'ip_alias' => $model->ip_alias,
             'port' => $model->port,
             'notes' => $model->notes,
